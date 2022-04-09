@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --sidebar-width: 300px;
+}
 :root.dark {
   --background-color: black;
 }
@@ -15,18 +18,37 @@ body {
 }
 .sidebar {
   position: relative;
+  width: var(--sidebar-width);
+  display: flex;
+  justify-content: flex-end;
 }
-img {
+.sidebar-background {
   height: 100%;
+  position: absolute;
+  z-index: -2;
 }
 .logo-container {
   position: absolute;
   top: 200px;
   width:100%;
   color: white;
-  background-color: black;
-  opacity: .4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
 }
-h1 {
-  opacity: 1;
+.background-shade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+  z-index: -1;
+}
+.logo {
+  height: 100px;
+  padding: 10px 0;
+}
+.logo-title {
+  font-size: 50px;
 }
