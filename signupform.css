@@ -1,16 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap');
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 :root {
-  --sidebar-width: 300px;
+  font-family: 'BIZ UDMincho', serif;
+  --sidebar-width: clamp(350px, 40%, 500px);
 }
 :root.dark {
   --background-color: black;
 }
 :root.light {
   --background-color: white;
+  --text-color: white;
+  --logo-background: black;
 }
+
 body {
   display: flex;
   height: 100vh;
@@ -18,7 +23,7 @@ body {
 }
 .sidebar {
   position: relative;
-  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
   display: flex;
   justify-content: flex-end;
 }
@@ -50,5 +55,49 @@ body {
   padding: 10px 0;
 }
 .logo-title {
-  font-size: 50px;
+  font-size: 85px;
+  margin-left: 15px;
+}
+.content {
+  width: 100%;
+  height: 100vh;
+  min-width: 300px;
+  padding: 0 15px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  width: clamp(300px, 70%, 450px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+fieldset {
+  border: none;
+}
+ul {
+  list-style-type: none;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+li {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-size: .9rem;
+}
+button[type="submit"] {
+  align-self: flex-start;
+}
+.login-link {
+  width: clamp(300px, 70%, 450px);
+  padding-top: 20px;
+  text-align: start;
 }
